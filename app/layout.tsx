@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import { BookMark } from '@/components/book-mark';
 import { ThemeProvider } from '@/components/theme/theme-provider';
 import { ThemeToggle } from '@/components/theme/theme-toggle';
-import { AnimatedSuspense } from '@/components/ui/animated-suspense';
+import { Crossfade } from '@/components/ui/crossfade';
 import { GitHubIcon } from '@/components/ui/github-icon';
 import ErrorBoundary from '@/components/ui/error-boundary';
 import { BookFilters, BookFiltersFallback } from '@/features/book/components/book-filters';
@@ -76,9 +76,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </div>
               <div className="border-divider dark:border-divider-dark mt-6 border-b pb-5">
                 <ErrorBoundary compact title="Catalog size unavailable">
-                  <AnimatedSuspense fallback={<CatalogSizeSkeleton />}>
-                    <CatalogSize />
-                  </AnimatedSuspense>
+                  <Suspense fallback={<CatalogSizeSkeleton />}>
+                    <Crossfade>
+                      <CatalogSize />
+                    </Crossfade>
+                  </Suspense>
                 </ErrorBoundary>
               </div>
               <p className="text-muted mt-5 mb-4 text-xs font-semibold tracking-wide uppercase">Filters</p>
