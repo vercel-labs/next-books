@@ -3,8 +3,10 @@ import type { ReactNode } from 'react';
 
 export function Crossfade({ children }: { children: ReactNode }) {
   return (
-    <ViewTransition default="none" enter="auto">
-      <div>{children}</div>
-    </ViewTransition>
+    <div>
+      <ViewTransition default="none" enter="auto">
+        {children}
+      </ViewTransition>
+    </div>
   );
 }
