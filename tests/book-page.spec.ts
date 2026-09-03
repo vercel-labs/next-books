@@ -20,6 +20,13 @@ test('a book navigation reveals its shell immediately', async ({ page }) => {
   await expect(page.getByRole('button', { name: 'Back to books' })).toBeVisible();
 });
 
+test('the back button works on a direct book visit', async ({ page }) => {
+  await page.goto('/5333265');
+  await page.getByRole('button', { name: 'Back to books' }).click();
+
+  await expect(page).toHaveURL('/');
+});
+
 test('hover intent warms the book page before the click', async ({ page }) => {
   await page.goto('/');
   const book = page.getByRole('link', { name: /Unschooled Wizard/ });

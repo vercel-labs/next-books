@@ -11,7 +11,11 @@ export function BackToBooksLink({ className }: { className?: string }) {
   const router = useRouter();
 
   return (
-    <button className={cn(linkClass, className)} onClick={() => router.back()} type="button">
+    <button
+      className={cn(linkClass, className)}
+      onClick={() => (window.navigation?.canGoBack ? router.back() : router.push('/'))}
+      type="button"
+    >
       <ArrowLeft aria-hidden className="size-4" />
       Back to books
     </button>
