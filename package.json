@@ -29,7 +29,7 @@
     "dotenv": "^17.4.2",
     "drizzle-orm": "^0.45.2",
     "lucide-react": "^1.34.0",
-    "next": "16.4.0-canary.8",
+    "next": "16.4.0-canary.48",
     "next-themes": "^0.4.6",
     "p-limit": "^7.3.1",
     "react": "19.2.8",
@@ -41,7 +41,7 @@
     "unlazy": "^2.0.1"
   },
   "devDependencies": {
-    "@next/playwright": "16.4.0-canary.8",
+    "@next/playwright": "16.4.0-canary.48",
     "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^26.3.0",
